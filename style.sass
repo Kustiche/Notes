@@ -1,0 +1,51 @@
+@font-face
+  font-family: "Manrope"
+  src: url("fonts/Manrope.woff2")
+  font-weight: 700
+  font-style: normal
+  font-display: swap
+
+$mine-shaft: #222222
+$cornflower-blue: #6a90f3
+$white: #ffffff
+$black: #000000
+$dove-gray: #616161
+
+@import "libs/normalize"
+
+html
+  box-sizing: border-box
+  scroll-behavior: smooth
+
+*,
+*::before,
+*::after
+  box-sizing: inherit
+
+body
+  font-family: "Manrope", sans-serif
+  font-weight: 700
+  font-size: 20px
+  line-height: 27px
+  color: $black
+
+.container
+  margin: 0 auto
+  padding: 0 15px
+  max-width: 1035px
+
+.btn-reset
+  padding: 0
+  background-color: transparent
+  border: none
+  cursor: pointer
+  color: inherit
+
+.link-reset
+  text-decoration: none
+  color: inherit
+
+.list-reset
+  margin: 0
+  padding: 0
+  list-style: none
