@@ -19,29 +19,33 @@
           <div class="notes__circle"></div>
           <span class="notes__excerpt-btn">Add new note</span>
         </button>
-        <template class="notes__inner">
-          <div class="notes__note-card">
-            <h2 class="notes__subtitle">Рапорт</h2>
-            <p class="notes__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-              ipsam modi illum.
-            </p>
-            <div class="notes__bottom-card">
-              <span class="notes__descr">Февраль 12, 2023</span>
-              <button class="notes__card-btn btn-reset">
-                <div class="notes__card-points hidden">
-                  <div class="notes__more hidden">
-                    <span class="notes__delete">Удалить</span>
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
-        </template>
+        <div class="notes__inner"></div>
       </div>
     </section>
+    <template id="note">
+      <div class="notes__note-card">
+        <h2 class="notes__subtitle">Рапорт</h2>
+        <p class="notes__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          ipsam modi illum.
+        </p>
+        <div class="notes__bottom-card">
+          <span class="notes__descr">Февраль 12, 2023</span>
+          <button class="notes__card-btn btn-reset notes__card-btn--hidden">
+            <div class="notes__card-points">
+              <div class="notes__more notes__more--hidden">
+                <span class="notes__delete">Удалить</span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </template>
     <dialog class="modal-form" id="modalForm">
-      <button class="modal-form__close btn-reset"></button>
+      <button
+        class="modal-form__close btn-reset"
+        onclick="window.modalForm.close();"
+      ></button>
       <form class="form" action="#">
         <input
           class="form__note-title input"
