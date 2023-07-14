@@ -12,6 +12,50 @@
     <title>Notes</title>
   </head>
   <body>
-    <script type="module" src="/main.js"></script>
+    <section class="notes">
+      <div class="notes__container container">
+        <h1 class="notes__title">Создайте свою заметку</h1>
+        <button class="notes__btn btn-reset">
+          <div class="notes__circle"></div>
+          <span class="notes__excerpt-btn">Add new note</span>
+        </button>
+        <template class="notes__inner">
+          <div class="notes__note-card">
+            <h2 class="notes__subtitle">Рапорт</h2>
+            <p class="notes__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+              ipsam modi illum.
+            </p>
+            <div class="notes__bottom-card">
+              <span class="notes__descr">Февраль 12, 2023</span>
+              <button class="notes__card-btn btn-reset">
+                <div class="notes__card-points hidden">
+                  <div class="notes__more hidden">
+                    <span class="notes__delete">Удалить</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+    <dialog class="modal-form" id="modalForm">
+      <button class="modal-form__close btn-reset"></button>
+      <form class="form" action="#">
+        <input
+          class="form__note-title input"
+          type="text"
+          placeholder="Введите заголовок"
+        />
+        <input
+          class="form__note-text input"
+          type="text"
+          placeholder="Заметка..."
+        />
+        <button class="form__btn btn-reset">Сохранить</button>
+      </form>
+    </dialog>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>
