@@ -9,3 +9,4 @@ export const modalFormErrorCloseBtn = document.querySelector('.modal-form__close
 export const formEditingNote = document.getElementById('formEditingNote');
 export const titleEditInput = document.getElementById('titleEditInput');
 export const textEditInput = document.getElementById('textEditInput');
+export const timeEdit = document.getElementById('timeEdit');
