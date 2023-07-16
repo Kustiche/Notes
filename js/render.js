@@ -4,8 +4,11 @@ import { notesInner } from "./view.js";
 
 export function render() {
   notesInner.textContent = '';
+  let index = 0;
 
   contentNotesArray.forEach((item) => {
-    createNote(item.title, item.text, item.time);
+    createNote(item.title, item.text, item.time, index);
+
+    ++index;
   });
 };

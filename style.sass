@@ -61,6 +61,26 @@ body
   border: 1px solid $cornflower-blue
   border-radius: 10px
 
+.btn-close
+  position: absolute
+  width: 20px
+  height: 20px
+  top: 15px
+  right: 15px
+  transition: transform .4s
+  &::after, &::before
+    position: absolute
+    content: ''
+    width: 15px
+    border-top: 1px solid $black
+    top: 10px
+    right: 3px
+    transform: rotate(-45deg)
+  &::before
+    transform: rotate(45deg)
+  &:hover
+    transform: scale(0.9)
+
 .notes
   padding-top: 45px
   padding-bottom: 45px
@@ -132,6 +152,9 @@ body
     display: flex
     flex-wrap: wrap
     width: 100%
+    overflow-y: scroll
+    height: 500px
+    max-height: 500px
     gap: 40px
 
   &__note-card
@@ -139,7 +162,7 @@ body
     flex-direction: column
     align-items: flex-start
     padding: 20px
-    width: 300px
+    width: 290px
     height: 250px
     background-color: $white
     border-radius: 20px
@@ -157,6 +180,8 @@ body
     margin-bottom: 5px
     font-size: 20px
     line-height: 20px
+    height: 100%
+    max-height: 20px
     color: $black
 
   &__text
@@ -217,8 +242,9 @@ body
     border-radius: 10px
     cursor: default
     position: absolute
-    top: 15px
+    top: -35px
     left: 0
+    z-index: 4
     transform: translateX(-45%)
     &--hidden
       display: none
@@ -237,26 +263,12 @@ body
   background-color: $white
   border-radius: 20px
   position: relative
+  &--error
+    padding-top: 105px
+    width: 480px
 
-  &__close
-    position: absolute
-    width: 10px
-    height: 10px
-    top: 20px
-    right: 16px
-    transition: transform .4s
-    &::after, &::before
-      position: absolute
-      content: ''
-      width: 15px
-      border-top: 1px solid $black
-      top: 0
-      right: 0
-      transform: rotate(-45deg)
-    &::before
-      transform: rotate(45deg)
-    &:hover
-      transform: scale(0.9)
+  &__text-error
+    margin: 0
 
 .form
   display: flex

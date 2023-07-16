@@ -24,14 +24,11 @@
     </section>
     <template id="note">
       <div class="notes__note-card">
-        <h2 class="notes__subtitle">Рапорт</h2>
-        <p class="notes__text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          ipsam modi illum.
-        </p>
+        <h2 class="notes__subtitle"></h2>
+        <p class="notes__text"></p>
         <div class="notes__bottom-card">
-          <span class="notes__descr">Февраль 12, 2023</span>
-          <button class="notes__card-btn btn-reset notes__card-btn--hidden">
+          <span class="notes__descr"></span>
+          <button class="notes__card-btn btn-reset">
             <div class="notes__card-points">
               <div class="notes__more notes__more--hidden">
                 <span class="notes__delete">Удалить</span>
@@ -42,10 +39,7 @@
       </div>
     </template>
     <dialog class="modal-form" id="modalForm">
-      <button
-        class="modal-form__close btn-reset"
-        onclick="window.modalForm.close();"
-      ></button>
+      <button class="modal-form__close btn-close btn-reset"></button>
       <form class="form" action="#">
         <input
           class="form__note-title input"
@@ -59,6 +53,10 @@
         />
         <button class="form__btn btn-reset">Сохранить</button>
       </form>
+    </dialog>
+    <dialog class="modal-form modal-form--error" id="modalFormError">
+      <button class="modal-form__close-error btn-close btn-reset"></button>
+      <p class="modal-form__text-error">Пустую заметку создать нельзя</p>
     </dialog>
     <script type="module" src="/js/main.js"></script>
   </body>
