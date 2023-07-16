@@ -1,7 +1,9 @@
+import { contentNotesArray } from "./contentNotesArray.js";
 import { addNoteArray } from "./createNote.js";
 import { deleteNote } from "./deleteNote.js";
 import { noteEditing } from "./noteEditing.js";
 import { openEditModal } from "./openEditModal.js";
+import { render } from "./render.js";
 import { addNoteBtn, addNoteForm, formEditingNote, modalFormCloseBtn, modalFormErrorCloseBtn, notesInner } from "./view.js";
 
 function openModalForm() {
@@ -15,6 +17,10 @@ export function closeModalForm() {
 function closeModalFormError() {
   window.modalFormError.close();
 };
+
+if (contentNotesArray.length !== 0) {
+  render();
+}
 
 addNoteBtn.addEventListener('click', () => {
   openModalForm();

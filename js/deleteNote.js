@@ -17,6 +17,7 @@ export function deleteNote(e) {
 
     if (e.target === cardDeleteBtn) {
       contentNotesArray.splice(Number(card.dataset.id), 1)
+      localStorage.setItem('contentNotesArray', JSON.stringify(contentNotesArray));
       render();
     };
   };

@@ -12,6 +12,7 @@ export function noteEditing(e) {
 
         contentNotesArray[cardId].title = titleEditInput.value;
         contentNotesArray[cardId].text = textEditInput.value;
+        localStorage.setItem('contentNotesArray', JSON.stringify(contentNotesArray));
 
         window.modalEditingCard.close();
         render();

@@ -28,6 +28,7 @@ export function addNoteArray() {
 
     formInputTitle.value = '';
     formInputText.value = '';
+    localStorage.setItem('contentNotesArray', JSON.stringify(contentNotesArray));
   }else {
     closeModalForm();
     window.modalFormError.showModal();
