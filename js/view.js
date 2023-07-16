@@ -6,3 +6,6 @@ export const notesInner = document.querySelector('.notes__inner');
 export const noteTemplate = document.getElementById('note');
 export const modalFormCloseBtn = document.querySelector('.modal-form__close');
 export const modalFormErrorCloseBtn = document.querySelector('.modal-form__close-error');
+export const formEditingNote = document.getElementById('formEditingNote');
+export const titleEditInput = document.getElementById('titleEditInput');
+export const textEditInput = document.getElementById('textEditInput');

@@ -38,6 +38,30 @@
         </div>
       </div>
     </template>
+    <dialog class="modal-editing-card" id="modalEditingCard">
+      <form class="notes__note-card" id="formEditingNote" action="#">
+        <input
+          class="notes__subtitle input input--without-border"
+          id="titleEditInput"
+          placeholder="Введите заголовок"
+        />
+        <textarea
+          class="notes__text input input--without-border"
+          id="textEditInput"
+          placeholder="Текст заметки"
+        ></textarea>
+        <div class="notes__bottom-card">
+          <span class="notes__descr">efqw</span>
+          <button class="notes__card-btn btn-reset">
+            <div class="notes__card-points">
+              <div class="notes__more notes__more--hidden">
+                <span class="notes__delete">Удалить</span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </form>
+    </dialog>
     <dialog class="modal-form" id="modalForm">
       <button class="modal-form__close btn-close btn-reset"></button>
       <form class="form" action="#">
