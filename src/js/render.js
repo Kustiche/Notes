@@ -3,7 +3,7 @@ import { createNote } from "./createNote.js";
 import { notesInner } from "./view.js";
 
 export function render() {
-  notesInner.textContent = '';
+  notesInner.innerHTML = '';
   let index = 0;
 
   contentNotesArray.forEach((item) => {

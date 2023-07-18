@@ -18,9 +18,15 @@ function closeModalFormError() {
   window.modalFormError.close();
 };
 
-if (contentNotesArray.length !== 0) {
-  render();
-}
+function localRender() {
+  if (contentNotesArray.length !== 0) {
+    render();
+  };
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  localRender();
+});
 
 addNoteBtn.addEventListener('click', () => {
   openModalForm();

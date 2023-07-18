@@ -6,10 +6,19 @@
   font-display: swap
 
 $mine-shaft: #222222
-$cornflower-blue: #6a90f3
+$mantis: #5DC060
 $white: #ffffff
 $black: #000000
 $dove-gray: #616161
+$sycamore: #AB9A3F
+$cerise-red: #DE3574
+$cerise: #E326CB
+$picton-blue: #399DF3
+$bright-turquoise: #39F3D9
+$confetti: #E6DF51
+$tumbleweed: #DDAF88
+$blue-bell: #8787C5
+$wewak: #F39996
 
 @import "libs/normalize"
 
@@ -32,7 +41,7 @@ body
 .container
   margin: 0 auto
   padding: 0 15px
-  max-width: 1350px
+  max-width: 1310px
 
 .btn-reset
   padding: 0
@@ -58,7 +67,7 @@ body
   width: 95%
   font-size: 15px
   line-height: 15px
-  border: 1px solid $cornflower-blue
+  border: 1px solid $mantis
   border-radius: 10px
   &--without-border
     border: none
@@ -87,7 +96,7 @@ body
   padding-top: 45px
   padding-bottom: 45px
   min-height: 100vh
-  background-color: $cornflower-blue
+  background-color: $mantis
 
   &__container
     display: flex
@@ -108,13 +117,13 @@ body
     margin-bottom: 40px
     padding: 33px 43px
     width: 165px
-    height: 135px
+    min-height: 135px
     border: 2px solid $white
     border-radius: 20px
     background-color: $white
     transition: background-color .4s
     &:hover
-      background-color: $cornflower-blue
+      background-color: $mantis
     &:hover .notes__circle
       border: 3px dashed $white
       &::after, &::before
@@ -126,7 +135,7 @@ body
     margin-bottom: 10px
     width: 45px
     height: 45px
-    border: 3px dashed $cornflower-blue
+    border: 3px dashed $mantis
     border-radius: 50%
     opacity: 80%
     position: relative
@@ -135,7 +144,7 @@ body
       position: absolute
       content: ""
       width: 8px
-      border-top: 2px solid $cornflower-blue
+      border-top: 2px solid $mantis
       top: 50%
       left: 50%
       transform: translate(-50%)
@@ -144,19 +153,17 @@ body
       transform: translate(-50%) rotate(90deg)
 
   &__excerpt-btn
-    font-size: 10px
-    line-height: 11px
-    color: $cornflower-blue
+    font-size: 15px
+    line-height: 18px
+    color: $mantis
     opacity: 80%
     transition: color .4s
 
   &__inner
     display: flex
     flex-wrap: wrap
+    align-items: flex-start
     width: 100%
-    overflow-y: scroll
-    height: 500px
-    max-height: 500px
     gap: 40px
 
   &__note-card
@@ -164,43 +171,43 @@ body
     flex-direction: column
     align-items: flex-start
     padding: 20px
-    width: 290px
-    height: 250px
+    width: 100%
+    max-width: 290px
+    min-height: 250px
     background-color: $white
     border-radius: 20px
-    position: relative
-    &::after
-      position: absolute
-      content: ""
-      border-top: 2px solid $dove-gray
-      width: 260px
-      bottom: 53px
-      left: 20px
 
   &__subtitle
     margin: 0
     margin-bottom: 5px
     font-size: 20px
-    line-height: 20px
-    height: 100%
-    max-height: 20px
+    line-height: 24px
+    min-height: 24px
     color: $black
 
   &__text
     margin: 0
     margin-bottom: 30px
     height: 100%
-    max-height: 140px
+    min-height: 140px
     font-size: 15px
-    line-height: 15px
+    line-height: 18px
 
   &__bottom-card
     display: flex
     width: 100%
     justify-content: space-between
     align-items: center
+    position: relative
+    &::after
+      position: absolute
+      content: ""
+      border-top: 2px solid $dove-gray
+      width: 260px
+      top: -15px
+      left: -5px
 
-  &__descr
+  &__time
     font-size: 15px
     line-height: 15px
 
@@ -234,30 +241,34 @@ body
 
   &__more
     display: flex
-    justify-content: center
-    align-items: center
+    flex-direction: column
+    align-items: flex-start
     padding: 10px 5px
-    width: 55px
-    height: 30px
     background-color: $white
     border: 1px solid $black
     border-radius: 10px
     cursor: default
     position: absolute
-    top: -35px
-    left: 0
+    bottom: 20px
+    right: -6px
     z-index: 4
-    transform: translateX(-45%)
     &--hidden
       display: none
 
   &__delete
-    font-size: 10px
-    line-height: 11px
+    font-size: 13px
+    line-height: 15px
     color: $black
     cursor: pointer
 
-.modal-form
+  &__btn-change-color
+    margin-bottom: 5px
+    font-size: 13px
+    line-height: 15px
+    color: $black
+    cursor: pointer
+
+.modal
   padding: 0 60px
   padding-top: 65px
   width: 395px
@@ -268,9 +279,87 @@ body
   &--error
     padding-top: 105px
     width: 480px
+  &--colors
+    padding-bottom: 65px
+    width: 574px
+    height: auto
 
   &__text-error
     margin: 0
+
+  &__subtitle
+    margin: 0
+    text-align: center
+    margin-bottom: 20px
+
+  &__inner-colors
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+    gap: 5px
+
+  &__color-btn
+    min-width: 40px
+    height: 40px
+    border-radius: 10px
+    background-color: $black
+    &:first-child
+      background-color: transparent
+      border: 2px solid $black
+      position: relative
+      &::after, &::before
+        position: absolute
+        content: ''
+        width: 40px
+        border-top: 2px solid $black
+        top: 50%
+        left: -2px
+        transform: rotate(45deg)
+      &::before
+        transform: rotate(-45deg)
+    &:nth-child(2)
+      background-color: $sycamore
+    &:nth-child(3)
+      background-color: $cerise-red
+    &:nth-child(4)
+      background-color: $cerise
+    &:nth-child(5)
+      background-color: $picton-blue
+    &:nth-child(6)
+      background-color: $bright-turquoise
+    &:nth-child(7)
+      background-color: $confetti
+    &:nth-child(8)
+      background-color: $tumbleweed
+    &:nth-child(9)
+      background-color: $blue-bell
+    &:nth-child(10)
+      background-color: $wewak
+
+  &__inner-images
+    display: flex
+    align-items: center
+    gap: 4px
+
+  &__img-btn
+    min-width: 60px
+    height: 60px
+    background-color: $black
+    border-radius: 10px
+    &:first-child
+      background-color: transparent
+      border: 2px solid $black
+      position: relative
+      &::after, &::before
+        position: absolute
+        content: ''
+        width: 60px
+        border-top: 2px solid $black
+        top: 50%
+        left: -2px
+        transform: rotate(45deg)
+      &::before
+        transform: rotate(-45deg)
 
 .form
   display: flex
@@ -284,17 +373,18 @@ body
     color: $white
     font-size: 15px
     line-height: 15px
-    background-color: $cornflower-blue
+    background-color: $mantis
     border-radius: 10px
-    border: 1px solid $cornflower-blue
+    border: 1px solid $mantis
     transition: all .4s
     &:hover
       background-color: $white
-      color: $cornflower-blue
+      color: $mantis
 
 .modal-editing-card
   padding: 0
-  width: 290px
-  height: 250px
+  width: 100%
+  max-width: 290px
+  min-height: 250px
   border-radius: 20px
   border: none

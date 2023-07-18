@@ -5,9 +5,9 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/resources/favicon/favicon.svg"
+      href="src/resources/favicon/favicon.svg"
     />
-    <link rel="stylesheet" href="style.sass" />
+    <link rel="stylesheet" href="src/style.sass" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes</title>
   </head>
@@ -17,7 +17,7 @@
         <h1 class="notes__title">Создайте свою заметку</h1>
         <button class="notes__btn btn-reset">
           <div class="notes__circle"></div>
-          <span class="notes__excerpt-btn">Add new note</span>
+          <span class="notes__excerpt-btn">Создать заметку</span>
         </button>
         <div class="notes__inner"></div>
       </div>
@@ -27,14 +27,14 @@
         <h2 class="notes__subtitle"></h2>
         <p class="notes__text"></p>
         <div class="notes__bottom-card">
-          <span class="notes__descr"></span>
+          <time class="notes__time"></time>
           <button class="notes__card-btn btn-reset">
-            <div class="notes__card-points">
-              <div class="notes__more notes__more--hidden">
-                <span class="notes__delete">Удалить</span>
-              </div>
-            </div>
+            <div class="notes__card-points"></div>
           </button>
+          <div class="notes__more notes__more--hidden">
+            <button class="notes__btn-change-color btn-reset">Цвет фона</button>
+            <button class="notes__delete btn-reset">Удалить</button>
+          </div>
         </div>
       </div>
     </template>
@@ -51,19 +51,13 @@
           placeholder="Текст заметки"
         ></textarea>
         <div class="notes__bottom-card">
-          <span class="notes__descr" id="timeEdit"></span>
-          <button class="notes__card-btn btn-reset">
-            <div class="notes__card-points">
-              <div class="notes__more notes__more--hidden">
-                <span class="notes__delete">Удалить</span>
-              </div>
-            </div>
-          </button>
+          <time class="notes__time" id="timeEdit"></time>
+          <button class="notes__card-btn btn-reset"></button>
         </div>
       </form>
     </dialog>
-    <dialog class="modal-form" id="modalForm">
-      <button class="modal-form__close btn-close btn-reset"></button>
+    <dialog class="modal" id="modalForm">
+      <button class="modal__close btn-close btn-reset"></button>
       <form class="form" action="#">
         <input
           class="form__note-title input"
@@ -78,10 +72,35 @@
         <button class="form__btn btn-reset">Сохранить</button>
       </form>
     </dialog>
-    <dialog class="modal-form modal-form--error" id="modalFormError">
-      <button class="modal-form__close-error btn-close btn-reset"></button>
-      <p class="modal-form__text-error">Пустую заметку создать нельзя</p>
+    <dialog class="modal modal--error" id="modalFormError">
+      <button class="modal__close-error btn-close btn-reset"></button>
+      <p class="modal__text-error">Пустую заметку создать нельзя</p>
     </dialog>
-    <script type="module" src="/js/main.js"></script>
+    <dialog class="modal modal--colors" id="modalChangeColor">
+      <button class="modal__close-error btn-close btn-reset"></button>
+      <h2 class="modal__subtitle">Выберите фон заметки</h2>
+      <div class="modal__inner-colors">
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+        <button class="modal__color-btn btn-reset"></button>
+      </div>
+      <div class="modal__inner-images">
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+      </div>
+    </dialog>
+    <script type="module" src="src/js/main.js"></script>
   </body>
 </html>

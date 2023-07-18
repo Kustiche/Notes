@@ -2,7 +2,7 @@ import { contentNotesArray } from "./contentNotesArray.js";
 import { render } from "./render.js";
 
 export function deleteNote(e) {
-  const isClickCard = e.target.className === 'notes__card-btn btn-reset' || e.target.className === 'notes__card-points' || e.target.className === 'notes__delete';
+  const isClickCard = e.target.className === 'notes__card-btn btn-reset' || e.target.className === 'notes__card-points' || e.target.className === 'notes__delete btn-reset';
 
   if (isClickCard) {
     const card = e.target.closest('.notes__note-card');

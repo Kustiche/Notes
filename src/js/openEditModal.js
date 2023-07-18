@@ -9,7 +9,7 @@ export function openEditModal(e) {
     const card = e.target.closest('.notes__note-card');
     const cardTitle = card.querySelector('.notes__subtitle');
     const cardText = card.querySelector('.notes__text');
-    const cardTime = card.querySelector('.notes__descr');
+    const cardTime = card.querySelector('.notes__time');
 
     cardId = card.dataset.id;
     titleEditInput.value = cardTitle.textContent;
