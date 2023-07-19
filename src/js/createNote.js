@@ -1,5 +1,5 @@
 import moment from "moment/moment.js";
-import { contentNotesArray } from "./contentNotesArray.js";
+import { notes } from "./notes.js";
 import { render } from "./render.js";
 import { formInputText, formInputTitle, noteTemplate, notesInner } from "./view.js";
 import { closeModalForm } from "./main.js";
@@ -13,6 +13,7 @@ function Note(title, text) {
   this.text = text;
   this.time = moment();
   this.index = index;
+  this.backgroundColor = '#ffffff';
 };
 
 export function addNoteArray() {
@@ -25,19 +26,19 @@ export function addNoteArray() {
 
     ++index;
 
-    contentNotesArray.push(note);
+    notes.push(note);
     render();
 
     formInputTitle.value = '';
     formInputText.value = '';
-    localStorage.setItem('contentNotesArray', JSON.stringify(contentNotesArray));
+    localStorage.setItem('notes', JSON.stringify(notes));
   }else {
     closeModalForm();
     window.modalFormError.showModal();
   };
 };
 
-export function createNote(title, text, time, index) {
+export function createNote(title, text, time, index, backgroundColor) {
   const item = noteTemplate.content.cloneNode(true);
   const card = item.querySelector('.notes__note-card');
   const cardTitle = item.querySelector('.notes__subtitle');
@@ -59,6 +60,8 @@ export function createNote(title, text, time, index) {
   };
 
   cardTime.textContent = `${month[moment(time).month()]} ${moment(time).date()}, ${moment(time).year()}`;
+
+  card.style.backgroundColor = backgroundColor;
 
   notesInner.append(item);
 };

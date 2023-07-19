@@ -1,10 +1,11 @@
-import { contentNotesArray } from "./contentNotesArray.js";
+import { notes } from "./notes.js";
 import { addNoteArray } from "./createNote.js";
-import { deleteNote } from "./deleteNote.js";
+import { changeNote } from "./changeNote.js";
 import { noteEditing } from "./noteEditing.js";
 import { openEditModal } from "./openEditModal.js";
 import { render } from "./render.js";
-import { addNoteBtn, addNoteForm, formEditingNote, modalFormCloseBtn, modalFormErrorCloseBtn, notesInner } from "./view.js";
+import { addNoteBtn, addNoteForm, formEditingNote, modalChangeColors, modalFormCloseBtn, modalFormColorCloseBtn, modalFormErrorCloseBtn, notesInner } from "./view.js";
+import { changeNoteBackground } from "./changeNoteBackgroundColor.js";
 
 function openModalForm() {
   window.modalForm.showModal();
@@ -18,8 +19,12 @@ function closeModalFormError() {
   window.modalFormError.close();
 };
 
+function closeModalFormColor() {
+  window.modalChangeColor.close();
+};
+
 function localRender() {
-  if (contentNotesArray.length !== 0) {
+  if (notes.length !== 0) {
     render();
   };
 };
@@ -40,6 +45,10 @@ modalFormErrorCloseBtn.addEventListener('click', () => {
   closeModalFormError();
 });
 
+modalFormColorCloseBtn.addEventListener('click', () => {
+  closeModalFormColor();
+});
+
 addNoteForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -49,11 +58,15 @@ addNoteForm.addEventListener('submit', (e) => {
 
 notesInner.addEventListener('click', (e) => {
   openEditModal(e);
-  deleteNote(e);
+  changeNote(e);
 });
 
 formEditingNote.addEventListener('submit', (e) => {
   e.preventDefault();
 
   noteEditing();
+});
+
+modalChangeColors.addEventListener('click', (e) => {
+  changeNoteBackground(e);
 });

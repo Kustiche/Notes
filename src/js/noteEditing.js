@@ -1,4 +1,4 @@
-import { contentNotesArray } from "./contentNotesArray.js";
+import { notes } from "./notes.js";
 import { cardId } from "./openEditModal.js";
 import { render } from "./render.js";
 import { textEditInput, titleEditInput } from "./view.js";
@@ -9,9 +9,9 @@ export function noteEditing() {
   allNotes.forEach((item) => {
     if (item.dataset.id === cardId) {
 
-      contentNotesArray[cardId].title = titleEditInput.value;
-      contentNotesArray[cardId].text = textEditInput.value;
-      localStorage.setItem('contentNotesArray', JSON.stringify(contentNotesArray));
+      notes[cardId].title = titleEditInput.value;
+      notes[cardId].text = textEditInput.value;
+      localStorage.setItem('notes', JSON.stringify(notes));
 
       window.modalEditingCard.close();
       render();
