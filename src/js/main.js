@@ -52,6 +52,8 @@ notesInner.addEventListener('click', (e) => {
   deleteNote(e);
 });
 
-formEditingNote.addEventListener('keydown', (e) => {
-  noteEditing(e);
+formEditingNote.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  noteEditing();
 });
