@@ -9,12 +9,13 @@ function deleteNote(cardId) {
   render();
 };
 
-function openChangeColor() {
+function openModalChangeColor() {
   window.modalChangeColor.showModal();
 };
 
 export function changeNote(e) {
-  const isClickCard = e.target.className === 'notes__card-btn btn-reset' || e.target.className === 'notes__card-points' || e.target.className === 'notes__delete btn-reset' || e.target.className === 'notes__btn-change-color btn-reset';
+  const targetClassName = e.target.className;
+  const isClickCard = targetClassName === 'notes__card-btn btn-reset' || targetClassName === 'notes__card-points' || targetClassName === 'notes__delete btn-reset' || targetClassName === 'notes__btn-change-color btn-reset';
 
   if (isClickCard) {
     const card = e.target.closest('.notes__note-card');
@@ -35,7 +36,7 @@ export function changeNote(e) {
     };
 
     if (e.target === cardChangeColorBtn) {
-      openChangeColor();
+      openModalChangeColor();
     }
   };
 };

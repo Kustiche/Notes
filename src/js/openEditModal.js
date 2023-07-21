@@ -3,7 +3,8 @@ import { textEditInput, timeEdit, titleEditInput } from "./view.js";
 export let cardId = '';
 
 export function openEditModal(e) {
-  const isClickCard = e.target.className === 'notes__note-card' || e.target.className === 'notes__subtitle' || e.target.className === 'notes__text';
+  const targetClassName = e.target.className;
+  const isClickCard = targetClassName === 'notes__note-card' || targetClassName === 'notes__subtitle' || targetClassName === 'notes__text';
 
   if (isClickCard) {
     const card = e.target.closest('.notes__note-card');
