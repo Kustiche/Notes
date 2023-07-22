@@ -6,11 +6,6 @@ import { openEditModal } from "./openEditModal.js";
 import { render } from "./render.js";
 import { addNoteBtn, addNoteForm, formEditingNote, modalChangeColors, modalFormCloseBtn, modalFormColorCloseBtn, modalFormErrorCloseBtn, notesInner } from "./view.js";
 import { changeNoteBackground } from "./changeNoteBackgroundColor.js";
-const ghpages = require('gh-pages');
-
-ghpages.publish(dir, {
-  src: 'dist/**/*',
-}, callback);
 
 function openModalForm() {
   window.modalForm.showModal();
