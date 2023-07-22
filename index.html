@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/favicon-f7a37384.svg"
+    />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <script type="module" crossorigin src="./assets/index-a15135ea.js"></script>
+    <link rel="stylesheet" href="./assets/index-248438b2.css">
+  </head>
+  <body>
+    <section class="notes">
+      <div class="notes__container container">
+        <h1 class="notes__title">Создайте свою заметку</h1>
+        <button class="notes__btn btn-reset">
+          <div class="notes__circle"></div>
+          <span class="notes__excerpt-btn">Создать заметку</span>
+        </button>
+        <div class="notes__inner"></div>
+      </div>
+    </section>
+    <template id="note">
+      <div class="notes__note-card">
+        <h2 class="notes__subtitle"></h2>
+        <p class="notes__text"></p>
+        <div class="notes__bottom-card">
+          <time class="notes__time"></time>
+          <button class="notes__card-btn btn-reset">
+            <div class="notes__card-points"></div>
+          </button>
+          <div class="notes__more notes__more--hidden">
+            <button class="notes__btn-change-color btn-reset">Цвет фона</button>
+            <button class="notes__delete btn-reset">Удалить</button>
+          </div>
+        </div>
+      </div>
+    </template>
+    <dialog class="modal-editing-card" id="modalEditingCard">
+      <form class="notes__note-card" id="formEditingNote" action="#">
+        <input
+          class="notes__subtitle input input--without-border"
+          id="titleEditInput"
+          placeholder="Введите заголовок"
+        />
+        <textarea
+          class="notes__text input input--without-border"
+          id="textEditInput"
+          placeholder="Текст заметки"
+        ></textarea>
+        <div class="notes__bottom-card">
+          <time class="notes__time" id="timeEdit"></time>
+          <button class="notes__form-btn btn-reset">Сохранить</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog class="modal" id="modalForm">
+      <button class="modal__close btn-close btn-reset"></button>
+      <form class="form" action="#">
+        <input
+          class="form__note-title input"
+          type="text"
+          placeholder="Введите заголовок"
+        />
+        <input
+          class="form__note-text input"
+          type="text"
+          placeholder="Заметка..."
+        />
+        <button class="form__btn btn-reset">Сохранить</button>
+      </form>
+    </dialog>
+    <dialog class="modal modal--error" id="modalFormError">
+      <button class="modal__close-error btn-close btn-reset"></button>
+      <p class="modal__text-error">Пустую заметку создать нельзя</p>
+    </dialog>
+    <dialog class="modal modal--colors" id="modalChangeColor">
+      <button class="modal__close-change-color btn-close btn-reset"></button>
+      <h2 class="modal__subtitle">Выберите фон заметки</h2>
+      <div class="modal__inner-colors">
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#ffffff"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#AB9A3F"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#DE3574"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#E326CB"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#399DF3"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#39F3D9"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#E6DF51"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#DDAF88"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#8787C5"
+        ></button>
+        <button
+          class="modal__color-btn btn-reset"
+          data-color="#F39996"
+        ></button>
+      </div>
+      <div class="modal__inner-images">
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+        <button class="modal__img-btn btn-reset"></button>
+      </div>
+    </dialog>
+    
+  </body>
+</html>
