@@ -38,5 +38,10 @@ export function changeNote(e) {
     if (e.target === cardChangeColorBtn) {
       openModalChangeColor();
     }
+  }else {
+    const allMore = document.querySelectorAll('.notes__more');
+    allMore.forEach((item) => {
+      item.classList.add('notes__more--hidden');
+    });
   };
 };
