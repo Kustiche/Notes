@@ -4,7 +4,7 @@ import { changeNote } from "./changeNote.js";
 import { noteEditing } from "./noteEditing.js";
 import { openEditModal } from "./openEditModal.js";
 import { render } from "./render.js";
-import { addNoteBtn, addNoteForm, formEditingNote, modalChangeColors, modalFormCloseBtn, modalFormColorCloseBtn, modalFormErrorCloseBtn, notesInner } from "./view.js";
+import { addNoteBtn, addNoteForm, formEditingNote, modalChangeColors, modalEditingCloseBtn, modalFormCloseBtn, modalFormColorCloseBtn, modalFormErrorCloseBtn, notesInner } from "./view.js";
 import { changeNoteBackground } from "./changeNoteBackgroundColor.js";
 
 function openModalForm() {
@@ -21,6 +21,10 @@ function closeModalFormError() {
 
 function closeModalFormColor() {
   window.modalChangeColor.close();
+};
+
+function closeModalFormEditing() {
+  window.modalEditingCard.close();
 };
 
 function localRender() {
@@ -47,6 +51,10 @@ modalFormErrorCloseBtn.addEventListener('click', () => {
 
 modalFormColorCloseBtn.addEventListener('click', () => {
   closeModalFormColor();
+});
+
+modalEditingCloseBtn.addEventListener('click', () => {
+  closeModalFormEditing();
 });
 
 addNoteForm.addEventListener('submit', (e) => {

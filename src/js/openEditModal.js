@@ -11,8 +11,10 @@ export function openEditModal(e) {
     const cardTitle = card.querySelector('.notes__subtitle');
     const cardText = card.querySelector('.notes__text');
     const cardTime = card.querySelector('.notes__time');
+    const formEditingNote = document.getElementById('formEditingNote');
 
     cardId = card.dataset.id;
+    formEditingNote.style.backgroundColor = `${card.style.backgroundColor}`;
     titleEditInput.value = cardTitle.textContent;
     textEditInput.value = cardText.textContent;
     timeEdit.textContent = cardTime.textContent;
