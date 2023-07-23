@@ -34,10 +34,10 @@ function localRender() {
 
   sectionNotes.style.backgroundColor = JSON.parse(localStorage.getItem('sectionBackground'));
 
-  if (sectionNotes.style.backgroundColor !== 'rgb(93, 192, 96)') {
-    checkbox.checked = true;
-  }else {
+  if (sectionNotes.style.backgroundColor === 'rgb(93, 192, 96)' || sectionNotes.style.backgroundColor === '') {
     checkbox.checked = false;
+  }else {
+    checkbox.checked = true;
   }
 };
 
