@@ -13,3 +13,6 @@ export const formEditingNote = document.getElementById('formEditingNote');
 export const titleEditInput = document.getElementById('titleEditInput');
 export const textEditInput = document.getElementById('textEditInput');
 export const timeEdit = document.getElementById('timeEdit');
+export const switchBackgroundBtn = document.querySelector('.notes__switch-background');
+export const sectionNotes = document.querySelector('.notes');
+export const checkbox = document.querySelector('.notes__checkbox');
