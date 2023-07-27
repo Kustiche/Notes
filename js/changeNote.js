@@ -26,6 +26,11 @@ export function changeNote(e) {
     changeNoteId = card.dataset.id;
 
     if (more.className === 'notes__more notes__more--hidden') {
+      const mores = document.querySelectorAll('.notes__more');
+      mores.forEach((item) => {
+        item.classList.add('notes__more--hidden');
+      });
+
       more.classList.remove('notes__more--hidden');
     }else {
       more.classList.add('notes__more--hidden');

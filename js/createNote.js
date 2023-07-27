@@ -13,7 +13,8 @@ function Note(title, text) {
   this.text = text;
   this.time = moment();
   this.index = index;
-  this.backgroundColor = '#ffffff';
+  this.backgroundColor;
+  this.backgroundImage;
 };
 
 export function addNoteArray() {
@@ -38,7 +39,7 @@ export function addNoteArray() {
   };
 };
 
-export function createNote(title, text, time, index, backgroundColor) {
+export function createNote(title, text, time, index, backgroundColor, backgroundImage) {
   const item = noteTemplate.content.cloneNode(true);
   const card = item.querySelector('.notes__note-card');
   const cardTitle = item.querySelector('.notes__subtitle');
@@ -61,7 +62,13 @@ export function createNote(title, text, time, index, backgroundColor) {
 
   cardTime.textContent = `${month[moment(time).month()]} ${moment(time).date()}, ${moment(time).year()}`;
 
-  card.style.backgroundColor = backgroundColor;
+  if (backgroundColor !== null) {
+    card.style.backgroundColor = backgroundColor;
+  };
+
+  if (backgroundImage !== null) {
+    card.style.backgroundImage = backgroundImage;
+  };
 
   notesInner.append(item);
 };

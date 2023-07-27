@@ -74,11 +74,11 @@
           type="text"
           placeholder="Введите заголовок"
         />
-        <input
+        <textarea
           class="form__note-text input"
           type="text"
           placeholder="Заметка..."
-        />
+        ></textarea>
         <button class="form__btn btn-reset">Сохранить</button>
       </form>
     </dialog>
@@ -90,10 +90,7 @@
       <button class="modal__close-change-color btn-close btn-reset"></button>
       <h2 class="modal__subtitle">Выберите фон заметки</h2>
       <div class="modal__inner-colors">
-        <button
-          class="modal__color-btn btn-reset"
-          data-color="#ffffff"
-        ></button>
+        <button class="modal__color-btn btn-reset"></button>
         <button
           class="modal__color-btn btn-reset"
           data-color="#AB9A3F"
@@ -133,14 +130,32 @@
       </div>
       <div class="modal__inner-images">
         <button class="modal__img-btn btn-reset"></button>
-        <button class="modal__img-btn btn-reset"></button>
-        <button class="modal__img-btn btn-reset"></button>
-        <button class="modal__img-btn btn-reset"></button>
-        <button class="modal__img-btn btn-reset"></button>
-        <button class="modal__img-btn btn-reset"></button>
-        <button class="modal__img-btn btn-reset"></button>
+        <button
+          class="modal__img-btn btn-reset"
+          data-img-url="url(tree.jpg)"
+        ></button>
+        <button
+          class="modal__img-btn btn-reset"
+          data-img-url="url(food.jpg)"
+        ></button>
+        <button
+          class="modal__img-btn btn-reset"
+          data-img-url="url(present.jpg)"
+        ></button>
+        <button
+          class="modal__img-btn btn-reset"
+          data-img-url="url(forest.jpg)"
+        ></button>
+        <button
+          class="modal__img-btn btn-reset"
+          data-img-url="url(office.jpg)"
+        ></button>
+        <button
+          class="modal__img-btn btn-reset"
+          data-img-url="url(workshop.jpg)"
+        ></button>
       </div>
     </dialog>
-    <script type="module" src="src/js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

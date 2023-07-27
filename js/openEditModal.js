@@ -4,7 +4,7 @@ export let cardId = '';
 
 export function openEditModal(e) {
   const targetClassName = e.target.className;
-  const isClickCard = targetClassName === 'notes__note-card' || targetClassName === 'notes__subtitle' || targetClassName === 'notes__text';
+  const isClickCard = targetClassName === 'notes__note-card' || targetClassName === 'notes__subtitle' || targetClassName === 'notes__text' || targetClassName === 'notes__blackout' || targetClassName === 'notes__bottom-card' || targetClassName === 'notes__time';
 
   if (isClickCard) {
     const card = e.target.closest('.notes__note-card');

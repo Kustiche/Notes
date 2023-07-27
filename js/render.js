@@ -7,7 +7,7 @@ export function render() {
   let index = 0;
 
   notes.forEach((item) => {
-    createNote(item.title, item.text, item.time, index, item.backgroundColor);
+    createNote(item.title, item.text, item.time, index, item.backgroundColor, item.backgroundImage);
 
     ++index;
   });

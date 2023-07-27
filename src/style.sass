@@ -64,7 +64,9 @@ body
   margin-bottom: 20px
   padding: 5px 0
   padding-left: 10px
-  width: 95%
+  padding-right: 10px
+  width: 100%
+  max-width: 92%
   font-size: 15px
   line-height: 15px
   border: 1px solid $mantis
@@ -236,6 +238,10 @@ body
     min-height: 250px
     background-color: $white
     border-radius: 20px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
 
   &__subtitle
     margin: 0
@@ -244,14 +250,15 @@ body
     line-height: 24px
     min-height: 24px
     color: $black
+    z-index: 1
 
   &__text
     margin: 0
     margin-bottom: 30px
-    height: 100%
     min-height: 140px
     font-size: 15px
     line-height: 18px
+    z-index: 1
 
   &__bottom-card
     display: flex
@@ -259,6 +266,7 @@ body
     justify-content: space-between
     align-items: center
     position: relative
+    z-index: 1
     &::after
       position: absolute
       content: ""
@@ -340,8 +348,7 @@ body
     cursor: pointer
 
 .modal
-  padding: 0 60px
-  padding-top: 65px
+  padding: 65px 60px
   width: 395px
   min-height: 250px
   background-color: $white
@@ -417,6 +424,9 @@ body
     height: 60px
     background-color: $black
     border-radius: 10px
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
     &:first-child
       background-color: transparent
       border: 2px solid $black
@@ -431,6 +441,21 @@ body
         transform: rotate(45deg)
       &::before
         transform: rotate(-45deg)
+    &:nth-child(2)
+      background-image: url('/tree.jpg')
+    &:nth-child(3)
+      background-image: url('/food.jpg')
+    &:nth-child(4)
+      background-image: url('/present.jpg')
+    &:nth-child(5)
+      background-image: url('/forest.jpg')
+    &:nth-child(6)
+      background-image: url('/office.jpg')
+    &:nth-child(7)
+      background-image: url('/workshop.jpg')
+
+  &__close-edeteng-card
+    top: 10px
 
 .form
   display: flex
@@ -451,6 +476,9 @@ body
     &:hover
       background-color: $white
       color: $mantis
+
+  &__note-text
+    min-height: 140px
 
 .modal-editing-card
   padding: 0
